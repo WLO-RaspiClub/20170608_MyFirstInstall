@@ -10,11 +10,11 @@
      - 最低4Gということだが、GUIなしでも8G以上が必要
      - microSDの寿命上、できれば32GB
      - 64GB以上はつかえない
- - インストール時に最低用意するもの
+ - GUIインストール時に最低用意するもの
      - Raspberry Pi
      - microUSB電源 最低2.5A
-     - miroSDカード
-     - USBキーボード
+     - miroSDカード class10/UHS-I対応 8～32GB、できれば2枚
+     - USBキーボード 
      - USBマウス
      - HDMIディスプレイ 横1366pixel 以上
      - HDMIケーブル
@@ -22,7 +22,19 @@
      
 #### どのOSをインストールするのか
  - NOOBS と Raspbianはどうちがうのか
+     - NOOBS: New Out Of the Box Software 「全部ひとつの箱にはいってます」的。初心者向け。Raspbianも含んでいる。
+         - メリット: Windows/MacOSでの作業はSDカードをフォーマットしてZIPの中にあるファイルをコピーするだけ。
+         - デメリット: ダウンロードサイズ大きい。起動してからmicroSDカードを初期化するので、インストール時にRaspberry Piの作業が多い。
+     - Raspbian: Debian for Raspberry Pi  「標準OS」
+         - メリット: MicroSDカードができたらそのまま起動できる。ダウンロードのサイズ小さい。
+         - デメリット: ダウンロードしたイメージファイルmicroSDに書き込むソフトが必要。
+     - Windows/MacOSがある程度使えるならRaspbianがおすすめ
+         - microSDの書き込みは、Etcher https://etcher.io/ を使うことで簡単になった
  - 「NOOBS」と「NOOBS Lite」の違い
+     - 「NOOBS Lite」は最初のダウンロードサイズは小さい(32MBくらい)、起動してからRaspberryPiがOSイメージをダウンロードするので時間かかる
+     - 「NOOBS」はRaspbianも含んでいるのでダウンロードサイズが大きい(1.3GB)
+     - 高性能なPCが使えるなら「NOOBS」の方がトータル時間は短い、がそれならRaspbianがおすすめ
+     - PCの空きディスク容量が少ないなら「NOOBS Lite」
  - 「Raspbian Jessie with PIXEL」と「Raspbian Jessie Lite」の違い
  - その他のOS
  
