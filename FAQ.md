@@ -2,12 +2,10 @@
 ### インストールするまで
 #### 共通
  - MicroSDカードの相性
- <details>
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
      - Toshiba/Transcend/Samsungが相性よいと言われている(MicroSD＋ブランドで「はずれ」がない)
      - SunDisk/Team/PATRiOT/Kingstoneは相性悪いと言われている(ブランドだけ確認しても相性がわからない)
- </details>
  - MicroSDカードのサイズ
      - 最低4Gということだが、GUIなしでも8G以上が必要
      - microSDの寿命上、できれば32GB (toshibaのもので1500円前後)
@@ -59,8 +57,14 @@
  
 #### NOOBSの場合 
  - NOOBSをダウンロードしたが、ZIPファイルの解凍ができない
+     - NOOBSには巨大なimageファイルが含まれており、OS標準のZipだと解凍できないことがあるよう。
+     - 7z https://sevenzip.osdn.jp/ など大きなファイルに対応した解凍プログラムを使う
  - NOOBSのファイルがmicroSDにコピーできない
- 
+     - 他の用途に使っていたmicroSDだと、パーティションが切られていて修正できないことがある。
+         - Etcherだとだいたい大丈夫だった
+     - SD Card Formatter https://www.sdcard.org/downloads/formatter_4/ 
+         - で一発でマッサラになる。
+         
 #### Raspbianの場合
  - microSDの作成方法
 
