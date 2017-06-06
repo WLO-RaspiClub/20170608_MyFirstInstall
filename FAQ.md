@@ -4,12 +4,12 @@
  - MicroSDカードの相性
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
-     - Toshiba/Transcend/Samsungが相性よいと言われている(MicroSD＋ブランドではずれがない)
-     - SunDisk/Team/PATRiOT/Kingstoneは相性悪いと言われている(動くカードとそうでないものがある)
+     - Toshiba/Transcend/Samsungが相性よいと言われている(MicroSD＋ブランドで「はずれ」がない)
+     - SunDisk/Team/PATRiOT/Kingstoneは相性悪いと言われている(ブランドだけ確認しても相性がわからない)
  - MicroSDカードのサイズ
      - 最低4Gということだが、GUIなしでも8G以上が必要
-     - microSDの寿命上、できれば32GB
-     - 64GB以上はつかえない
+     - microSDの寿命上、できれば32GB (toshibaのもので1500円前後)
+     - 64GB以上はつかえない(microSDXCはダメ)
  - GUIインストール時に最低用意するもの
      - Raspberry Pi
      - microUSB電源 最低2.5A
@@ -18,7 +18,7 @@
      - USBマウス
      - HDMIディスプレイ 横1366pixel 以上
      - HDMIケーブル
-     - 有線LAN
+     - 有線LAN（ケーブル/HUB)+インターネット接続環境(ルータ)
      
 #### どのOSをインストールするのか
  - NOOBS と Raspbianはどうちがうのか
@@ -36,6 +36,18 @@
      - 高性能なPCが使えるなら「NOOBS」の方がトータル時間は短い、がそれならRaspbianがおすすめ
      - PCの空きディスク容量が少ないなら「NOOBS Lite」
  - 「Raspbian Jessie with PIXEL」と「Raspbian Jessie Lite」の違い
+     - GUIで起動するのが「Raspbian Jessie with PIXEL」、CUI (文字だけのコンソール)で起動するのが「Raspbian Jessie Lite」
+     - 初心者は「Raspbian Jessie with PIXEL」
+     - 「ヘッドレス」運用（サーバとして使ったり、機器に組み込んで使う場合など）はGUIがない分性能が上がるので「Raspbian Jessie Lite」
+     - 「Raspbian Jessie Lite」⇒「Raspbian Jessie with PIXEL」は可能。
+     - ``` 
+$ sudo apt-get update
+$ sudo apt-get dist-upgrade
+$ sudo apt-get install -y rpi-chromium-mods
+$ sudo apt-get install -y python-sense-emu python3-sense-emu
+$ sudo apt-get install -y python-sense-emu-doc realvnc-vnc-viewer
+```
+
  - その他のOS
  
 #### NOOBSの場合 
