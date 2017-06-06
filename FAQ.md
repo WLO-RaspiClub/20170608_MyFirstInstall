@@ -24,7 +24,15 @@
  - MicroSDを作成するときに必要なもの
      - Windows/MacOSがインストールされたPC
      - NOOBSの場合: ZIPを解凍できるツール(7z/WinRARなど)
-     - Raspbianをインストールする場合: Etcher https://etcher.io/ 
+     - Raspbianをインストールする場合: Etcher https://etcher.io/ が便利
+         - Windows/MacOS/Linuxで利用可能
+         - OSイメージをzipのまま利用可能
+         - 簡単な手順:
+             - Select Imageボタン押下⇒ダウンロードしたOSイメージを選択。zipのままでよい。
+             - Select Driveボタン押下⇒インストール先のmicroSDを選択。選択間違うとPCを壊してしまうので注意。
+                 - Etcher立ち上げてからmicroSDを接続すると間違えにくい
+             - Flashボタンで書き込み
+                 - PCの性能にもよるが5分～10分程度、書き込み後確認もしてくれる。
      - OSイメージ
          - https://www.raspberrypi.org/downloads/ からダウンロードしておく
          - https://www.raspberrypi.org/downloads/noobs/ から NOOBS LiteのDownload Zipをクリックして保存 (約32MB)
@@ -72,10 +80,10 @@
  - NOOBSをダウンロードしたが、ZIPファイルの解凍ができない
      - ファイルが最後までダウンロードされているか確認
          - ファイルのSHA1がダウンロードページに書かれているものと合っているか確認する
-　　　　         - Windowsの場合だと、certutil.exeコマンドで確認できる
+　　　　         - Windowsの場合だと、certutil.exeコマンド(DOS窓)で確認できる
        　　　　  - MacOSの場合だと opensslコマンドで確認できる
      - NOOBSには巨大なimageファイルが含まれており、OS標準のZipだと解凍できないことがあるよう。
-     - 7z https://sevenzip.osdn.jp/ など大きなファイルに対応した解凍プログラムを使う
+         - 7z https://sevenzip.osdn.jp/ など大きなファイルに対応した解凍プログラムを使う
  - NOOBSのファイルがmicroSDにコピーできない
      - 他の用途に使っていたmicroSDだと、パーティションが切られていて修正できないことがある。
          - Etcherだとだいたい大丈夫だった
@@ -85,25 +93,48 @@
 #### Raspbianでのトラブル
  - Etcherがエラーになる
      - ダウンロードしたイメージファイルが壊れていないか確認
-              - ファイルのSHA1がダウンロードページに書かれているものと合っているか確認する
-　　　　         - Windowsの場合だと、certutil.exeコマンドで確認できる
+         - ファイルのSHA1がダウンロードページに書かれているものと合っているか確認する
+　　　　         - Windowsの場合だと、certutil.exeコマンド(DOS窓)で確認できる
        　　　　  - MacOSの場合だと opensslコマンドで確認できる
-     - Etcher https
+
      - Windows/MacOS/Linuxで利用可能
      - OSイメージをzipのまま利用可能
      - 
 
 #### インストール後
  - Raspbian起動時のエラー
-  - HDMIモニタになにも表示されない
-  - Panic表示
+     - HDMIモニタになにも表示されない
+         - LEDを確認する
+             - 赤LEDついてない: 電源供給されていない
+             - 赤LED点滅: 電源電圧が低い/電流が少ない⇒ACアダプタ、ケーブル確認
+             - 緑LED点滅: 起動シーケンスに問題あり 1点滅/SD形式違い 2点滅/SD不良 3点滅/start.elf不良 4点滅/start.elf起動不良 など
+             - 緑消灯: 起動しているがHDMIに表示されない ケーブル不良、HDMI形式違い
+     - 虹色四角が表示したまま
+          - GPUは起動したがCPU起動していない。 /boot/config.txtを変更している場合は確認、していない場合はmicroSDカード不良
+     - HDMIモニターが乱れる
+          - /boot/config.txtで解像度変更している場合に解像度があってない。していない場合は対応していないHDMI解像度⇒/boot/config.txtを要修正。
+ - 起動途中で再起動してしまう
+     - 電源電圧が低かったり電流が少なかったりすると、起動途中でたりなくなって再起動してしまう
+ - Panic表示
+     - USB接続したハードウェアが正しく動かない
+         - USB接続の周辺機器を抜いてみる
+     - microSD不良
+         - 正しくOSが書き込まれていない
+ - 参考: http://elinux.org/R-Pi_Troubleshooting
  
 ### インストール後の初期設定
  - MicroSDのサイズについて
+     - OSイメージは4GBを前提に導入される。8GB以上の場合はパーティションの拡張をしないと最大サイズまで使えない
+     - 初回起動時に自動で実行される
+         - 実行されなかった場合は、raspi-configで実施できる
+ - パスワード変更
+     - 標準ユーザ「pi」のパスワードはデフォルト「raspberry」なので、必ず変更しておく
+     - GUI: 左上メニュー⇒Preferences⇒Raspberry Pi Configuration⇒Systemタブの「Change Password」ボタン
+     - CUI: sudo raspi-config⇒ 1.Change User Password
  - 時刻設定
  - ネットワーク設定
-  - 有線LAN
-  - 無線LAN
+     - 有線LAN
+     - 無線LAN
  - パッケージ更新
  - パッケージ更新が遅い
  - ターミナル
