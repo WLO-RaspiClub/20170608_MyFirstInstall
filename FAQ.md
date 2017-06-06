@@ -1,6 +1,6 @@
 ## ハマリポイント
 ### インストールするまで
-#### 共通
+<h4> 共通 </h4>
  - MicroSDカードの相性
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
@@ -10,6 +10,13 @@
      - 最低4Gということだが、GUIなしでも8G以上が必要
      - microSDの寿命上、できれば32GB (toshibaのもので1500円前後)
      - 64GB以上はつかえない(microSDXCはダメ)
+ - MicroSDを作成するときに必要なもの
+     - Windows/MacOSがインストールされたPC
+     - Etcher https://etcher.io/ 
+     - OSイメージ
+         - https://www.raspberrypi.org/downloads/ からダウンロードしておく
+         - https://www.raspberrypi.org/downloads/noobs/ から NOOBS LiteのDownload Zipをクリックして保存 (約32MB)
+         - https://www.raspberrypi.org/downloads/raspbian/ から Raspbian Jessie with PIXELのDownload Zipをクリックして保存 (約1.3GB)
  - GUIインストール時に最低用意するもの
      - Raspberry Pi
      - microUSB電源 最低2.5A
@@ -20,7 +27,7 @@
      - HDMIケーブル
      - 有線LAN（ケーブル/HUB)+インターネット接続環境(ルータ)
      
-#### どのOSをインストールするのか
+     #### <details><summary> どのOSをインストールするのか</summary>
  - NOOBS と Raspbianはどうちがうのか
      - NOOBS: New Out Of the Box Software 「全部ひとつの箱にはいってます」的。初心者向け。Raspbianも含んでいる。
          - メリット: Windows/MacOSでの作業はSDカードをフォーマットしてZIPの中にあるファイルをコピーするだけ。
@@ -54,7 +61,7 @@
          - Arch Linux は、あらゆる用途に対応できる万能 GNU/Linux ディストリビューションです。その開発は、シンプリシティ、ミニマリズム、およびコードの簡潔性に焦点を当てています。Arch は最小限の基本システムの状態でインストールされ、ユーザー自身が、ユーザーの理想とする環境のために必要なものだけをインストールして構築することができます。
      - DietPi http://dietpi.com/ 
          - 100MB以下で動作するDebian
- 
+ </details>
 #### NOOBSの場合 
  - NOOBSをダウンロードしたが、ZIPファイルの解凍ができない
      - NOOBSには巨大なimageファイルが含まれており、OS標準のZipだと解凍できないことがあるよう。
@@ -67,6 +74,10 @@
          
 #### Raspbianの場合
  - microSDの作成方法
+     - Etcher https://etcher.io/ を使う
+     - Windows/MacOS/Linuxで利用可能
+     - OSイメージをzipのまま利用可能
+     - 
 
 #### インストール後
  - Raspbian起動時のエラー
