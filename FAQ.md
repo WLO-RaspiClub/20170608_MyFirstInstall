@@ -2,10 +2,12 @@
 ### インストールするまで
 #### 共通
  - MicroSDカードの相性
+ <details>
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
      - Toshiba/Transcend/Samsungが相性よいと言われている(MicroSD＋ブランドで「はずれ」がない)
      - SunDisk/Team/PATRiOT/Kingstoneは相性悪いと言われている(ブランドだけ確認しても相性がわからない)
+ </details>
  - MicroSDカードのサイズ
      - 最低4Gということだが、GUIなしでも8G以上が必要
      - microSDの寿命上、できれば32GB (toshibaのもので1500円前後)
