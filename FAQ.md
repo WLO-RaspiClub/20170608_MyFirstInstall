@@ -1,6 +1,17 @@
 ## ハマリポイント
 ### インストールするまで
 #### 共通
+ - GUIインストール時に最低用意するもの
+     - Raspberry Pi
+     - microUSB電源 最低2.5A
+     - miroSDカード class10/UHS-I対応 8～32GB、できれば2枚
+         - インストールが終わった後、インストール直後のMicroSDを複製しておくため。
+         - 2枚目はOS イメージの書き込み不要。
+     - USBキーボード 
+     - USBマウス
+     - HDMIディスプレイ 横1366pixel 以上
+     - HDMIケーブル
+     - 有線LAN（ケーブル/HUB)+インターネット接続環境(ルータ)
  - MicroSDカードの相性
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
@@ -12,29 +23,24 @@
      - 64GB以上はつかえない(microSDXCはダメ)
  - MicroSDを作成するときに必要なもの
      - Windows/MacOSがインストールされたPC
-     - Etcher https://etcher.io/ 
+     - NOOBSの場合: ZIPを解凍できるツール(7z/WinRARなど)
+     - Raspbianをインストールする場合: Etcher https://etcher.io/ 
      - OSイメージ
          - https://www.raspberrypi.org/downloads/ からダウンロードしておく
          - https://www.raspberrypi.org/downloads/noobs/ から NOOBS LiteのDownload Zipをクリックして保存 (約32MB)
          - https://www.raspberrypi.org/downloads/raspbian/ から Raspbian Jessie with PIXELのDownload Zipをクリックして保存 (約1.3GB)
- - GUIインストール時に最低用意するもの
-     - Raspberry Pi
-     - microUSB電源 最低2.5A
-     - miroSDカード class10/UHS-I対応 8～32GB、できれば2枚
-     - USBキーボード 
-     - USBマウス
-     - HDMIディスプレイ 横1366pixel 以上
-     - HDMIケーブル
-     - 有線LAN（ケーブル/HUB)+インターネット接続環境(ルータ)
-     
+     - miroSDカード class10/UHS-I対応 8～32GB
+     - PCにmicroSDスロットがない場合、USB接続のMicroSDカードリーダ
+
 #### どのOSをインストールするのか
+ - おすすめは「Raspbian Jessie with PIXEL」
  - NOOBS と Raspbianはどうちがうのか
      - NOOBS: New Out Of the Box Software 「全部ひとつの箱にはいってます」的。初心者向け。Raspbianも含んでいる。
          - メリット: Windows/MacOSでの作業はSDカードをフォーマットしてZIPの中にあるファイルをコピーするだけ。
          - デメリット: ダウンロードサイズ大きい。起動してからmicroSDカードを初期化するので、インストール時にRaspberry Piの作業が多い。
      - Raspbian: Debian for Raspberry Pi  「標準OS」
          - メリット: MicroSDカードができたらそのまま起動できる。ダウンロードのサイズ小さい。
-         - デメリット: ダウンロードしたイメージファイルmicroSDに書き込むソフトが必要。
+         - デメリット: ダウンロードしたイメージファイルmicroSDに書き込むソフト(Etcher)が必要。
      - Windows/MacOSがある程度使えるならRaspbianがおすすめ
          - microSDの書き込みは、Etcher https://etcher.io/ を使うことで簡単になった
  - 「NOOBS」と「NOOBS Lite」の違い
@@ -61,9 +67,13 @@
          - Arch Linux は、あらゆる用途に対応できる万能 GNU/Linux ディストリビューションです。その開発は、シンプリシティ、ミニマリズム、およびコードの簡潔性に焦点を当てています。Arch は最小限の基本システムの状態でインストールされ、ユーザー自身が、ユーザーの理想とする環境のために必要なものだけをインストールして構築することができます。
      - DietPi http://dietpi.com/ 
          - 100MB以下で動作するDebian
- </details>
-#### NOOBSの場合 
+
+#### NOOBSでのトラブル
  - NOOBSをダウンロードしたが、ZIPファイルの解凍ができない
+     - ファイルが最後までダウンロードされているか確認
+         - ファイルのSHA1がダウンロードページに書かれているものと合っているか確認する
+　　　　         - Windowsの場合だと、certutil.exeコマンドで確認できる
+       　　　　  - MacOSの場合だと opensslコマンドで確認できる
      - NOOBSには巨大なimageファイルが含まれており、OS標準のZipだと解凍できないことがあるよう。
      - 7z https://sevenzip.osdn.jp/ など大きなファイルに対応した解凍プログラムを使う
  - NOOBSのファイルがmicroSDにコピーできない
@@ -72,9 +82,13 @@
      - SD Card Formatter https://www.sdcard.org/downloads/formatter_4/ 
          - で一発でマッサラになる。
          
-#### Raspbianの場合
- - microSDの作成方法
-     - Etcher https://etcher.io/ を使う
+#### Raspbianでのトラブル
+ - Etcherがエラーになる
+     - ダウンロードしたイメージファイルが壊れていないか確認
+              - ファイルのSHA1がダウンロードページに書かれているものと合っているか確認する
+　　　　         - Windowsの場合だと、certutil.exeコマンドで確認できる
+       　　　　  - MacOSの場合だと opensslコマンドで確認できる
+     - Etcher https
      - Windows/MacOS/Linuxで利用可能
      - OSイメージをzipのまま利用可能
      - 
