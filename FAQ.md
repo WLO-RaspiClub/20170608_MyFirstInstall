@@ -1,6 +1,6 @@
 ## ハマリポイント
 ### インストールするまで
-<h4> 共通 </h4>
+#### 共通
  - MicroSDカードの相性
      - まずはMicroSDHC、class10/UHS-I対応、8G/16G/32G
      - 相性は http://elinux.org/RPi_SD_cards にまとまっている
@@ -27,7 +27,7 @@
      - HDMIケーブル
      - 有線LAN（ケーブル/HUB)+インターネット接続環境(ルータ)
      
-     #### <details><summary> どのOSをインストールするのか</summary>
+#### どのOSをインストールするのか
  - NOOBS と Raspbianはどうちがうのか
      - NOOBS: New Out Of the Box Software 「全部ひとつの箱にはいってます」的。初心者向け。Raspbianも含んでいる。
          - メリット: Windows/MacOSでの作業はSDカードをフォーマットしてZIPの中にあるファイルをコピーするだけ。
