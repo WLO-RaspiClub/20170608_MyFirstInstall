@@ -40,8 +40,8 @@
      - 初心者は「Raspbian Jessie with PIXEL」
      - 「ヘッドレス」運用（サーバとして使ったり、機器に組み込んで使う場合など）はGUIがない分性能が上がるので「Raspbian Jessie Lite」
      - 「Raspbian Jessie Lite」⇒「Raspbian Jessie with PIXEL」は可能。
-     -
-     ``` 
+
+``` 
 $ sudo apt-get update
 $ sudo apt-get dist-upgrade
 $ sudo apt-get install -y rpi-chromium-mods
