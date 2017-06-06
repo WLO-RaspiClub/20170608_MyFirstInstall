@@ -40,16 +40,20 @@
      - 初心者は「Raspbian Jessie with PIXEL」
      - 「ヘッドレス」運用（サーバとして使ったり、機器に組み込んで使う場合など）はGUIがない分性能が上がるので「Raspbian Jessie Lite」
      - 「Raspbian Jessie Lite」⇒「Raspbian Jessie with PIXEL」は可能。
-
-``` 
-$ sudo apt-get update
-$ sudo apt-get dist-upgrade
-$ sudo apt-get install -y rpi-chromium-mods
-$ sudo apt-get install -y python-sense-emu python3-sense-emu
-$ sudo apt-get install -y python-sense-emu-doc realvnc-vnc-viewer
-```
-
  - その他のOS
+     - Ubuntu Mate https://ubuntu-mate.org/raspberry-pi/
+         - もうひとつのディストリビューションであるUbuntuをベースにマルチメディアやRaspberryPi固有のパッケージを整備したもの
+         - 商用アプリの利用時にUbuntuを要求するものがある
+     - Windows IoT Core https://developer.microsoft.com/en-us/windows/iot/getstarted
+         - MicrosoftがIoT用途に提供しているOSコア＋αのOS。通常のWindowsのアプリは動かない。
+     - Google Coder for Raspberry Pi https://googlecreativelab.github.io/coder/
+         - Web+IoTのプロトタイピングや教育用にGoogleが配布している環境
+     - Android Things for Raspberry Pi 3 https://developer.android.com/things/hardware/raspberrypi.html
+         - IoT用に最適化されたAndroid OS。Raspberry Pi 3でしか動かない。
+     - Arch Linux https://wiki.archlinuxjp.org/index.php/Raspberry_Pi
+         - Arch Linux は、あらゆる用途に対応できる万能 GNU/Linux ディストリビューションです。その開発は、シンプリシティ、ミニマリズム、およびコードの簡潔性に焦点を当てています。Arch は最小限の基本システムの状態でインストールされ、ユーザー自身が、ユーザーの理想とする環境のために必要なものだけをインストールして構築することができます。
+     - DietPi http://dietpi.com/ 
+         - 100MB以下で動作するDebian
  
 #### NOOBSの場合 
  - NOOBSをダウンロードしたが、ZIPファイルの解凍ができない
