@@ -121,18 +121,49 @@
  - 参考: http://elinux.org/R-Pi_Troubleshooting
  
 ### インストール後の初期設定
- - MicroSDのサイズについて
-     - OSイメージは4GBを前提に導入される。8GB以上の場合はパーティションの拡張をしないと最大サイズまで使えない
+####  MicroSDのサイズについて
+ - OSイメージは4GBを前提に導入される。8GB以上の場合はパーティションの拡張をしないと最大サイズまで使えない
      - 初回起動時に自動で実行される
          - 実行されなかった場合は、raspi-configで実施できる
- - パスワード変更
-     - 標準ユーザ「pi」のパスワードはデフォルト「raspberry」なので、必ず変更しておく
-     - GUI: 左上メニュー⇒Preferences⇒Raspberry Pi Configuration⇒Systemタブの「Change Password」ボタン
-     - CUI: sudo raspi-config⇒ 1.Change User Password
- - 時刻設定
+#### 初期設定
+ - 最低限の設定をRaspberry Pi Configurationで設定する
+     - GUI: 左上メニュー⇒Preferences⇒Raspberry Pi Configuration (日本語だと「Raspberry Piの設定」）
+     - CUI: sudo raspi-config
+##### パスワード変更
+ - 標準ユーザ「pi」のパスワードはデフォルト「raspberry」なので、必ず変更しておく
+     - GUI: Systemタブの「Change Password」ボタン
+     - CUI: 1.Change User Password
+ - 国設定(Localisation)
+     - 国ごとに異なる設定
+     - Locale （画面の表示や文字)
+         - Language: ja(Japanese)
+         - Country: JP(Japan)
+         - Character Set: UTF-8
+     - 設定後、OKを押すと再起動を要求されるので、再起動後に画面が日本語になります
+     - (以降は日本語名で説明します)
+ - タイムゾーン設定
+     - 時刻は自動的に設定される(NTP:Network Time Protocol)
+     - 自身のタイムゾーンを設定しないと、UTC(標準時)で設定される。(日本時間より9時間遅れます）
+     - ローカライゼーションタブの「タイムゾーンの設定」
+         - 地域: Asia
+         - 位置: Tokyo
+ - キーボード設定
+     - 接続したキーボード配列を指定（自動認識されないので）
+     - ローカライゼーションタブの「キーボードの設定」
+         - Contry: 日本
+         - Variant: 日本語
+         - 下の「Type here to test your keyboard」でテストする。「：」「；」「＠」「’」「｜」あたりをテストして「OK」を押下
+     - キーボードを抜き差しすると戻ってしまうことがあるので再度設定する
+ - 無線LANの国設定
+     - 国によって周波数が違うので、Raspberry Pi3を使うときは必ず設定する。
+     - ローカライゼーションタブの「無線LANの国設定」
+         - 国: JP_Japan
  - ネットワーク設定
      - 有線LAN
+         - DHCPが有効なLANに接続した場合は設定なしで接続できる
+         - 固定IP
      - 無線LAN
+         - 無線LANがあるときは、メニュー右上の
  - パッケージ更新
  - パッケージ更新が遅い
  - ターミナル
