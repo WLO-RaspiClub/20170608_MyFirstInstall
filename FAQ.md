@@ -165,6 +165,8 @@
      - 無線LAN
          - 無線LANがあるときは、メニュー右上の
  - パッケージ更新
+     - GUI: 設定→Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」
+     - CUI: sudo apt update / sudo apt upgrade
  - パッケージ更新が遅い
  - ターミナル
   - キーボードの表示と入力値が異なる
