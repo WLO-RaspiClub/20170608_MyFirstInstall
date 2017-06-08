@@ -168,6 +168,7 @@
      - GUI: 設定 → Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」
      - CUI: sudo apt update / sudo apt upgrade
  - パッケージ更新が遅い
+     - sudo apt purge wolfam-engine をやっておく
  - ターミナル
   - キーボードの表示と入力値が異なる
  
