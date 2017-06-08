@@ -163,12 +163,12 @@
          - DHCPが有効なLANに接続した場合は設定なしで接続できる
          - 固定IP
      - 無線LAN
-         - 無線LANがあるときは、メニュー右上から設定
+         - 無線LANがあるときは、メニュー右上から設定
  - パッケージ更新
-     - GUI: 設定 → Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」
+     - GUI: 設定 → Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」（再起動が必要）
      - CUI: sudo apt update / sudo apt upgrade
  - パッケージ更新が遅い
-     - sudo apt purge wolfam-engine をやっておく
+     - パッケージ更新の前に「sudo apt purge wolfam-engine」 をやっておく
  - ターミナル
   - キーボードの表示と入力値が異なる
  
