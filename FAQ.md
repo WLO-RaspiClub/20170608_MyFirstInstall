@@ -133,8 +133,8 @@
  - 標準ユーザ「pi」のパスワードはデフォルト「raspberry」なので、必ず変更しておく
      - GUI: Systemタブの「Change Password」ボタン
      - CUI: 1.Change User Password
- - 国設定(Localisation)
-     - 国ごとに異なる設定
+##### 国設定(Localisation)
+ - 国ごとに異なる設定
      - Locale （画面の表示や文字)
          - Language: ja(Japanese)
          - Country: JP(Japan)
@@ -158,18 +158,22 @@
      - 国によって周波数が違うので、Raspberry Pi3を使うときは必ず設定する。
      - ローカライゼーションタブの「無線LANの国設定」
          - 国: JP_Japan
- - ネットワーク設定
-     - 有線LAN
-         - DHCPが有効なLANに接続した場合は設定なしで接続できる
+##### ネットワーク設定
+ - 有線LAN
+     - DHCPが有効なLANに接続した場合は設定なしで接続できる
          - 固定IP
-     - 無線LAN
-         - 無線LANがあるときは、メニュー右上から設定
- - パッケージ更新
-     - GUI: 設定 → Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」（再起動が必要）
-     - CUI: sudo apt update / sudo apt upgrade
+ - 無線LAN
+     - 無線LANがある(Raspberry Pi 3/Pi Zero W)ときは、メニュー右上から設定
+##### パッケージ更新
+ - Raspbianのリリース以降に更新されたソフトウェアパッケージを更新する(WindowsUpdate的な)
+     - GUI: 設定 → Add/Remove Software、Optionsの「パッケージの一覧を更新」、その後「更新の確認」（再起動が必要）
+     - CUI: sudo apt update / sudo apt upgrade
  - パッケージ更新が遅い
-     - パッケージ更新の前に「sudo apt purge wolfram-engine」 をやっておく
- - ターミナル
+     - Mathematica(最新技術計算システム)、Wolfram(Mathematicaでつかう専用言語)のサイズが大きい(640MB)
+         - 科学技術計算するには必須のパッケージ。Raspberry Piにはライセンスが無料。
+     - インストール直後パッケージ更新の前に「sudo apt purge wolfram-engine」 をやっておく
+         - 必要になったときはあとでインストールしなおすことができる
+##### ターミナル
   - キーボードの表示と入力値が異なる
  
 ## おすすめインストール手順
