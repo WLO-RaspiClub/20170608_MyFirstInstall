@@ -174,8 +174,18 @@
      - インストール直後パッケージ更新の前に「sudo apt purge wolfram-engine」 をやっておく
          - 必要になったときはあとでインストールしなおすことができる
 ##### ターミナル
+  - CUIでコマンド実行する場合に用いる
   - キーボードの表示と入力値が異なる
- 
+      - 起動後にUSBキーボードを接続しなおした際などに、配置設定が初期化されることがある
+      - 「Raspberry Piの設定」のローカライゼーションタブの「キーボードの設定」で再設定する
+### インストール完了後にMicroSDカードを複製しておく
+  - 初期設定まで完了したMicroSDカードを複製しておくことで、MicroSDが壊れた場合などに便利
+      - Raspberry PiにはMicroSDカードスロットが１つしかないので、MicroSD対応のUSBカードリーダを準備
+  - 「アクセサリ」⇒「SD CARD Copier」
+      - Copy From Deviceは「Internal SD card」
+      - Copy To DeviceはUSBカードリーダを接続して▼を押すと表示されるデバイスを選択
+      - 「Start」ボタン押下⇒確認ダイアログ「Yes」ボタン押下で複製開始
+      - サイズによって時間が異なるが、16GBだと15分程度。
 ## おすすめインストール手順
 ### NOOBS
 ##### Raspberry Pi Software Guide
